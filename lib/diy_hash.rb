@@ -17,4 +17,8 @@ class Hashbrowns
   def hashbrowns_key?(key)
     @keys.include?(key)
   end
+
+  def hashbrowns_value?(value)
+    @values.include?(value)
+  end
 end
