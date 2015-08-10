@@ -35,4 +35,14 @@ describe(Hashbrowns) do
       expect(test_hash.hashbrowns_length()).to(eq(2))
     end
   end
+
+  describe("#hashbrowns_merge") do
+    it("returns the amount of hashes included") do
+      test_hash_a = Hashbrowns.new()
+      test_hash_b = Hashbrowns.new()
+      test_hash_a.myStore("kitten", "cute")
+      test_hash_b.myStore("kittens", "cutes")
+      expect(test_hash_a.hashbrowns_merge(test_hash_b)).to(eq({"kitten"=>"cute", "kittens"=>"cutes"}))
+    end
+  end
 end
