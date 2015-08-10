@@ -48,9 +48,10 @@ class Hashbrowns
   def initialize
     @hashbrowns = []
   end
+
   def myStore(key, value)
-    @hash = []
-    @hashbrowns.push(@hash.push(key, value))
+    hash = []
+    @hashbrowns.push(hash.push(key, value))
   end
 
   def hashbrowns_key?(key)
@@ -73,6 +74,10 @@ class Hashbrowns
     value_find
   end
 
+  def return_array
+    @hashbrowns
+  end
+
   def myFetch(key)
     value = nil
     @hashbrowns.each do |hashbrown|
@@ -91,4 +96,11 @@ class Hashbrowns
     counter
   end
 
+  def hashbrowns_merge(hash_b)
+    hash_a = self.return_array
+    hash_b.return_array.each do |each_hash|
+      hash_a.push(each_hash)
+    end
+    hash_a
+  end
 end

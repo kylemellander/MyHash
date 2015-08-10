@@ -11,6 +11,14 @@ describe(Hashbrowns) do
     end
   end
 
+  describe("#myStore") do
+    it("retrieves a stored value by its key") do
+      test_hash = Hashbrowns.new()
+      test_hash.myStore("dog", "pathetic")
+      expect(test_hash.myStore("kitten", "cute")).to(eq([["dog", "pathetic"], ["kitten", "cute"]]))
+    end
+  end
+
   describe("#hashbrowns_key?") do
     it("returns true if the hash has key") do
       test_hash = Hashbrowns.new()
@@ -42,7 +50,7 @@ describe(Hashbrowns) do
       test_hash_b = Hashbrowns.new()
       test_hash_a.myStore("kitten", "cute")
       test_hash_b.myStore("kittens", "cutes")
-      expect(test_hash_a.hashbrowns_merge(test_hash_b)).to(eq({"kitten"=>"cute", "kittens"=>"cutes"}))
+      expect(test_hash_a.hashbrowns_merge(test_hash_b)).to(eq([["kitten", "cute"], ["kittens", "cutes"]]))
     end
   end
 end
