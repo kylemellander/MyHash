@@ -13,4 +13,8 @@ class Hashbrowns
     i = @keys.index(key)
     @values[i]
   end
+
+  def hashbrowns_key?(key)
+    @keys.include?(key)
+  end
 end
