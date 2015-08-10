@@ -45,9 +45,11 @@
 
 
 class Hashbrowns
+  def initialize
+    @hashbrowns = []
+  end
   def myStore(key, value)
     @hash = []
-    @hashbrowns = []
     @hashbrowns.push(@hash.push(key, value))
   end
 
@@ -80,4 +82,13 @@ class Hashbrowns
     end
     value
   end
+
+  def hashbrowns_length
+    counter = 0
+    @hashbrowns.each() do |hashbrown|
+      counter += 1
+    end
+    counter
+  end
+
 end
