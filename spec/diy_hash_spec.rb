@@ -26,4 +26,13 @@ describe(Hashbrowns) do
       expect(test_hash.hashbrowns_value?("cute")).to(eq(true))
     end
   end
+
+  describe("#hashbrowns_length") do
+    it("returns the amount of hashes included") do
+      test_hash = Hashbrowns.new()
+      test_hash.myStore("kitten", "cute")
+      test_hash.myStore("kittens", "cutes")
+      expect(test_hash.hashbrowns_length()).to(eq(2))
+    end
+  end
 end

@@ -21,4 +21,12 @@ class Hashbrowns
   def hashbrowns_value?(value)
     @values.include?(value)
   end
+
+  def hashbrowns_length
+    i=0
+    @keys.each do
+      i+=1
+    end
+    i
+  end
 end
